@@ -29,14 +29,16 @@ class _CalculationResult {
   String result_sg_5='';
   String result_sg_5_2='';
   String result_ad='';
+  String result_sg_50='';
+  String result_gotejamento='';
 
 }
 
-class _GreenBookCalculator {
+class _GreenbookCalculator {
   final _result = new _CalculationResult();
 
   _CalculationResult calculate(_FormData formData) {
-    var result_g_de_glic = formData.tic.doubleValue*formData.peso.doubleValue*1.4;
+    var result_g_de_glic = formData.tic.doubleValue*formData.peso.doubleValue*1.44;
     var result_taxa_hidrica = formData.peso.doubleValue*formData.taxa_hidrica.doubleValue;
     var result_nacl = formData.peso.doubleValue*formData.nacl.doubleValue/3.4;
     var result_gluca = formData.peso.doubleValue*formData.gluca.doubleValue;
@@ -44,11 +46,12 @@ class _GreenBookCalculator {
     var result_volume_compor_tig = (formData.peso.doubleValue*formData.taxa_hidrica.doubleValue)-(result_nacl+result_gluca+result_kcl);
     var result_percent_composicao_soro = (result_g_de_glic*100)/result_volume_compor_tig;
     var result_sg_10 = (result_percent_composicao_soro>10) ? ((50-result_percent_composicao_soro)*result_volume_compor_tig/40) : 0;
-    var result_sg_10_2 = (result_percent_composicao_soro>5&&result_percent_composicao_soro<10) ? ((50-result_percent_composicao_soro)*result_volume_compor_tig/40) : 0;
     var result_sg_5 = (result_percent_composicao_soro>5&&result_percent_composicao_soro<10) ? (10-result_percent_composicao_soro)*result_volume_compor_tig/5 : 0;
-    var result_sg_5_2 = (result_percent_composicao_soro<5) ? result_percent_composicao_soro*result_volume_compor_tig/5 : 0;
+    var result_sg_10_2 = (result_percent_composicao_soro>5&&result_percent_composicao_soro<10) ? ((50-result_percent_composicao_soro)*result_volume_compor_tig/40) : 0;
+    var result_sg_5_2 = (result_percent_composicao_soro<5) ? result_volume_compor_tig-result_sg_10_2 : 0;
     var result_ad = (result_percent_composicao_soro<5) ? 5-result_percent_composicao_soro*result_volume_compor_tig/5 : 0;
-    var result_50 = (result_percent_composicao_soro>10) ? result_percent_composicao_soro : 0;
+    var result_50 = (result_percent_composicao_soro>10) ? (result_percent_composicao_soro-10)*result_volume_compor_tig/40 : 0;
+    var result_gotejamento = result_taxa_hidrica/24;
 
     _result.result_g_de_glic=result_g_de_glic.toString();
     _result.result_taxa_hidrica=result_taxa_hidrica.toString();
@@ -62,6 +65,8 @@ class _GreenBookCalculator {
     _result.result_sg_5=result_sg_5.toString();
     _result.result_sg_5_2=result_sg_5_2.toString();
     _result.result_ad=result_ad.toString();
+    _result.result_sg_50=result_50.toString();
+    _result.result_gotejamento=result_gotejamento.toString();
     return _result;
   }
 }
@@ -69,8 +74,7 @@ class _GreenBookCalculator {
 class _GreenbookHomePageState extends State<GreenbookHomePage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   final _FormData _data = new _FormData();
-  final _CalculationResult _result = _CalculationResult();
-  final _GreenBookCalculator _calculator = new _GreenBookCalculator();
+  final _GreenbookCalculator _calculator = new _GreenbookCalculator();
 
   String _validateValue(String value) {
     const VALIDATION_MESSAGE = 'Por favor digite um valor';
@@ -217,6 +221,14 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                 new ListTile(
                     title: const Text('AD'),
                     subtitle: new Text('${_calculator._result.result_ad} ml')
+                ),
+                new ListTile(
+                    title: const Text('SG50%'),
+                    subtitle: new Text('${_calculator._result.result_sg_50} ml')
+                ),
+                new ListTile(
+                    title: const Text('Gotejamento'),
+                    subtitle: new Text('${_calculator._result.result_gotejamento}')
                 ),
               ],
             ),
