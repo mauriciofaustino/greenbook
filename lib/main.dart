@@ -9,7 +9,7 @@ class GreenbookApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Greenbook',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: new GreenbookHomePage(),
     );
