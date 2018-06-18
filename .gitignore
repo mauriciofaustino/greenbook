@@ -151,4 +151,6 @@ doc/api/
 modules.xml
 *.ipr
 .idea/
+*.keystore
+key.properties
 
