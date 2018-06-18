@@ -129,10 +129,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                   ),
                 ),
                 new ListTile(
-                  title: const Text('g de glic'),
-                  subtitle: new Text('${_calculator._result.result_g_de_glic} g')
-                ),
-                new ListTile(
                   title: new TextFormField(
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
@@ -142,10 +138,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     controller: this._data.taxa_hidrica,
                     validator: this._validateValue,
                   ),
-                ),
-                new ListTile(
-                    title: const Text('Taxa Hidrica'),
-                    subtitle: new Text('${_calculator._result.result_taxa_hidrica}')
                 ),
                 new ListTile(
                   title: new TextFormField(
@@ -159,10 +151,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                   ),
                 ),
                 new ListTile(
-                    title: const Text('Nacl 20% (meq/kg)'),
-                    subtitle: new Text('${_calculator._result.result_nacl} ml')
-                ),
-                new ListTile(
                   title: new TextFormField(
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
@@ -174,10 +162,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                   ),
                 ),
                 new ListTile(
-                    title: const Text('GluCa 10% (ml/kg)'),
-                    subtitle: new Text('${_calculator._result.result_gluca} ml')
-                ),
-                new ListTile(
                   title: new TextFormField(
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
@@ -187,6 +171,22 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     controller: this._data.kcl,
                     validator: this._validateValue,
                   ),
+                ),
+                new ListTile(
+                    title: const Text('g de glic'),
+                    subtitle: new Text('${_calculator._result.result_g_de_glic} g')
+                ),
+                new ListTile(
+                    title: const Text('Taxa Hidrica'),
+                    subtitle: new Text('${_calculator._result.result_taxa_hidrica}')
+                ),
+                new ListTile(
+                    title: const Text('Nacl 20% (meq/kg)'),
+                    subtitle: new Text('${_calculator._result.result_nacl} ml')
+                ),
+                new ListTile(
+                    title: const Text('GluCa 10% (ml/kg)'),
+                    subtitle: new Text('${_calculator._result.result_gluca} ml')
                 ),
                 new ListTile(
                     title: const Text('kcl 10% (meq/kg)'),
