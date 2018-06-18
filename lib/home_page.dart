@@ -47,7 +47,7 @@ class _GreenbookCalculator {
     var result_percent_composicao_soro = (result_g_de_glic*100)/result_volume_compor_tig;
     var result_sg_10 = (result_percent_composicao_soro>10) ? ((50-result_percent_composicao_soro)*result_volume_compor_tig/40) : 0;
     var result_sg_5 = (result_percent_composicao_soro>5&&result_percent_composicao_soro<10) ? (10-result_percent_composicao_soro)*result_volume_compor_tig/5 : 0;
-    var result_sg_10_2 = (result_percent_composicao_soro>5&&result_percent_composicao_soro<10) ? ((50-result_percent_composicao_soro)*result_volume_compor_tig/40) : 0;
+    var result_sg_10_2 = (result_percent_composicao_soro>5&&result_percent_composicao_soro<10) ? result_volume_compor_tig-result_sg_5 : 0;
     var result_sg_5_2 = (result_percent_composicao_soro<5) ? result_volume_compor_tig-result_sg_10_2 : 0;
     var result_ad = (result_percent_composicao_soro<5) ? 5-result_percent_composicao_soro*result_volume_compor_tig/5 : 0;
     var result_50 = (result_percent_composicao_soro>10) ? (result_percent_composicao_soro-10)*result_volume_compor_tig/40 : 0;
@@ -223,7 +223,7 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     subtitle: new Text('${_calculator._result.result_ad} ml')
                 ),
                 new ListTile(
-                    title: const Text('SG50%'),
+                    title: const Text('SG 50%'),
                     subtitle: new Text('${_calculator._result.result_sg_50} ml')
                 ),
                 new ListTile(
@@ -238,9 +238,9 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
         onPressed: () {
           _formKey.currentState.save();
           if (this._formKey.currentState.validate()) {
-            Scaffold.of(context).showSnackBar(new SnackBar(
-              content: new Text("Sending Message"),
-            ));
+//            Scaffold.of(context).showSnackBar(new SnackBar(
+//              content: new Text("Calculando"),
+//            ));
             this.submit();
           }
         },
