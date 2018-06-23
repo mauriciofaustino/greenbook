@@ -8,7 +8,7 @@ class GreenbookHomePage extends StatefulWidget {
 }
 
 class _FormData {
-  DoubleEditingController tic = new DoubleEditingController();
+  DoubleEditingController tig = new DoubleEditingController();
   DoubleEditingController peso = new DoubleEditingController();
   DoubleEditingController taxa_hidrica = new DoubleEditingController();
   DoubleEditingController nacl = new DoubleEditingController();
@@ -38,7 +38,7 @@ class _GreenbookCalculator {
   final _result = new _CalculationResult();
 
   _CalculationResult calculate(_FormData formData) {
-    var result_g_de_glic = formData.tic.doubleValue*formData.peso.doubleValue*1.44;
+    var result_g_de_glic = formData.tig.doubleValue*formData.peso.doubleValue*1.44;
     var result_taxa_hidrica = formData.peso.doubleValue*formData.taxa_hidrica.doubleValue;
     var result_nacl = formData.peso.doubleValue*formData.nacl.doubleValue/3.4;
     var result_gluca = formData.peso.doubleValue*formData.gluca.doubleValue;
@@ -110,10 +110,10 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                   title: new TextFormField(
                       keyboardType: TextInputType.number, 
                       decoration: new InputDecoration(
-                        labelText: 'TIC (mcg/kg/min)',
+                        labelText: 'TIG (mcg/kg/min)',
                         hintText: '3 mcg/kg/min',
                       ),
-                      controller: this._data.tic,
+                      controller: this._data.tig,
                       validator: this._validateValue,
                   ),
                 ),
