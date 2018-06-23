@@ -53,20 +53,20 @@ class _GreenbookCalculator {
     var result_50 = (result_percent_composicao_soro>10) ? (result_percent_composicao_soro-10)*result_volume_compor_tig/40 : 0;
     var result_gotejamento = result_taxa_hidrica/24;
 
-    _result.result_g_de_glic=result_g_de_glic.toString();
-    _result.result_taxa_hidrica=result_taxa_hidrica.toString();
-    _result.result_nacl=result_nacl.toString();
-    _result.result_gluca=result_gluca.toString();
-    _result.result_kcl=result_kcl.toString();
-    _result.result_volume_compor_tig=result_volume_compor_tig.toString();
-    _result.result_percent_composicao_soro=result_percent_composicao_soro.toString();
-    _result.result_sg_10=result_sg_10.toString();
-    _result.result_sg_10_2=result_sg_10_2.toString();
-    _result.result_sg_5=result_sg_5.toString();
-    _result.result_sg_5_2=result_sg_5_2.toString();
-    _result.result_ad=result_ad.toString();
-    _result.result_sg_50=result_50.toString();
-    _result.result_gotejamento=result_gotejamento.toString();
+    _result.result_g_de_glic=result_g_de_glic.toStringAsFixed(2);
+    _result.result_taxa_hidrica=result_taxa_hidrica.toStringAsFixed(2);
+    _result.result_nacl=result_nacl.toStringAsFixed(2);
+    _result.result_gluca=result_gluca.toStringAsFixed(2);
+    _result.result_kcl=result_kcl.toStringAsFixed(2);
+    _result.result_volume_compor_tig=result_volume_compor_tig.toStringAsFixed(2);
+    _result.result_percent_composicao_soro=result_percent_composicao_soro.toStringAsFixed(2);
+    _result.result_sg_10=result_sg_10.toStringAsFixed(2);
+    _result.result_sg_10_2=result_sg_10_2.toStringAsFixed(2);
+    _result.result_sg_5=result_sg_5.toStringAsFixed(2);
+    _result.result_sg_5_2=result_sg_5_2.toStringAsFixed(2);
+    _result.result_ad=result_ad.toStringAsFixed(2);
+    _result.result_sg_50=result_50.toStringAsFixed(2);
+    _result.result_gotejamento=result_gotejamento.toStringAsFixed(2);
     return _result;
   }
 }
