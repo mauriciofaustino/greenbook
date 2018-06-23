@@ -101,7 +101,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
         title: new Text('Greenbook'),
       ),
       body: new Container(
-          padding: new EdgeInsets.all(20.0),
           child: new Form(
             key: this._formKey,
             child: new ListView(
