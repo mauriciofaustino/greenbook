@@ -111,7 +111,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                       keyboardType: TextInputType.number, 
                       decoration: new InputDecoration(
                         labelText: 'TIG (mcg/kg/min)',
-                        hintText: '3 mcg/kg/min',
                       ),
                       controller: this._data.tig,
                       validator: this._validateValue,
@@ -122,7 +121,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                       keyboardType: TextInputType.number, 
                       decoration: new InputDecoration(
                         labelText: 'Peso (kg)',
-                        hintText: '5 kg',
                       ),
                       controller: this._data.peso,
                       validator: this._validateValue,
@@ -133,7 +131,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
                       labelText: 'Taxa hídrica',
-                      hintText: '50',
                     ),
                     controller: this._data.taxa_hidrica,
                     validator: this._validateValue,
@@ -144,7 +141,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
                       labelText: 'Nacl 20% (meq/kg)',
-                      hintText: '2',
                     ),
                     controller: this._data.nacl,
                     validator: this._validateValue,
@@ -155,7 +151,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
                       labelText: 'GluCa 10% (ml/kg)',
-                      hintText: '2',
                     ),
                     controller: this._data.gluca,
                     validator: this._validateValue,
@@ -166,7 +161,6 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
                       labelText: 'kcl 10% (meq/kg)',
-                      hintText: '2',
                     ),
                     controller: this._data.kcl,
                     validator: this._validateValue,
