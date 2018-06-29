@@ -109,7 +109,7 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                   title: new TextFormField(
                       keyboardType: TextInputType.number, 
                       decoration: new InputDecoration(
-                        labelText: 'TIG (mcg/kg/min)',
+                        labelText: 'Taxa de Infusão de Glicose (mcg/kg/min)',
                       ),
                       controller: this._data.tig,
                       validator: this._validateValue,
@@ -129,7 +129,7 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                   title: new TextFormField(
                     keyboardType: TextInputType.number, 
                     decoration: new InputDecoration(
-                      labelText: 'Taxa hídrica',
+                      labelText: 'Taxa Hídrica',
                     ),
                     controller: this._data.taxa_hidrica,
                     validator: this._validateValue,
@@ -166,11 +166,11 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                   ),
                 ),
                 new ListTile(
-                    title: const Text('g de glic'),
+                    title: const Text('Gramas de Glicose Total'),
                     subtitle: new Text('${_calculator._result.result_g_de_glic} g')
                 ),
                 new ListTile(
-                    title: const Text('Taxa Hidrica'),
+                    title: const Text('Taxa Hídrica'),
                     subtitle: new Text('${_calculator._result.result_taxa_hidrica}')
                 ),
                 new ListTile(
@@ -186,35 +186,27 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
                     subtitle: new Text('${_calculator._result.result_kcl} ml')
                 ),
                 new ListTile(
-                    title: const Text('volume p/ compor TIG'),
-                    subtitle: new Text('${_calculator._result.result_volume_compor_tig} ml')
-                ),
-                new ListTile(
-                    title: const Text('% p/ composição do soro'),
-                    subtitle: new Text('${_calculator._result.result_percent_composicao_soro} %')
-                ),
-                new ListTile(
-                    title: const Text('SG 10%'),
+                    title: const Text('Soro Glicosado 10%'),
                     subtitle: new Text('${_calculator._result.result_sg_10} ml')
                 ),
                 new ListTile(
-                    title: const Text('SG 10%'),
+                    title: const Text('Soro Glicosado 10%'),
                     subtitle: new Text('${_calculator._result.result_sg_10_2} ml')
                 ),
                 new ListTile(
-                    title: const Text('SG5%'),
+                    title: const Text('Soro Glicosado  5%'),
                     subtitle: new Text('${_calculator._result.result_sg_5} ml')
                 ),
                 new ListTile(
-                    title: const Text('SG 5%'),
+                    title: const Text('Soro Glicosado 5%'),
                     subtitle: new Text('${_calculator._result.result_sg_5_2} ml')
                 ),
                 new ListTile(
-                    title: const Text('AD'),
+                    title: const Text('Água Destilada'),
                     subtitle: new Text('${_calculator._result.result_ad} ml')
                 ),
                 new ListTile(
-                    title: const Text('SG 50%'),
+                    title: const Text('Soro Glicosado 50%'),
                     subtitle: new Text('${_calculator._result.result_sg_50} ml')
                 ),
                 new ListTile(
