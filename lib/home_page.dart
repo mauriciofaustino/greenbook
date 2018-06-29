@@ -99,6 +99,20 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Greenbook'),
+        actions: <Widget>[
+          // action button
+          new IconButton(
+          icon: new Icon(Icons.help),
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (_) => new AlertDialog(
+                  title: new Text("Ajuda"),
+                  content: new Text("Este aplicativo se destina à médicos que desejam uma forma rápida e confiável de realizar hidratação venosa neonatal com taxa de infusão de glicose, taxa hídrica e quantidade de cálcio, potássio e sódio a ser determinada pelo prescritor e o cálculo baseado no peso é realizado pelo aplicativo de forma instantânea, inclusive podendo ser utilizado offline."),
+                )
+            );
+          })
+        ]
       ),
       body: new Container(
           child: new Form(
