@@ -80,7 +80,7 @@ class _GreenbookHomePageState extends State<GreenbookHomePage> {
     const VALIDATION_MESSAGE = 'Por favor digite um valor';
     try {
       Validate.notBlank(value);
-      if(!(double.parse(value) > 0)) return VALIDATION_MESSAGE;
+      if(!(parseToDouble(value) >= 0)) return VALIDATION_MESSAGE;
     } catch (e) {
       return VALIDATION_MESSAGE;
     }
